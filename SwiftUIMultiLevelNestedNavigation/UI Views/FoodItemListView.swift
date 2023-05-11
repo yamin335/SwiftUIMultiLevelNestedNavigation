@@ -7,6 +7,23 @@
 
 import SwiftUI
 
+struct ListItem: View {
+    let label: String
+    
+    var body: some View {
+        Text(label)
+            .font(.system(size: 24, weight: .regular))
+            .foregroundColor(.blue)
+            .padding(.horizontal, 15)
+            .padding(.vertical, 6)
+            .frame(minWidth: 0, maxWidth: .infinity)
+            .background(
+                RoundedRectangle(cornerRadius: 5, style: .circular)
+                    .stroke(.blue, lineWidth: 1)
+            )
+    }
+}
+
 struct FoodItemListView: View {
     static let tag = "FoodItemListView"
     @Binding var path: NavigationPath
@@ -17,16 +34,7 @@ struct FoodItemListView: View {
                 Button(action: {
                     path.append(item)
                 }) {
-                    Text(item.name)
-                        .font(.system(size: 24, weight: .regular))
-                        .foregroundColor(.blue)
-                        .padding(.horizontal, 15)
-                        .padding(.vertical, 6)
-                        .frame(minWidth: 0, maxWidth: .infinity)
-                        .background(
-                            RoundedRectangle(cornerRadius: 5, style: .circular)
-                                .stroke(.blue, lineWidth: 1)
-                        )
+                    ListItem(label: item.name)
                 }
             }
         }.navigationTitle("Yummy Foods 🍕")

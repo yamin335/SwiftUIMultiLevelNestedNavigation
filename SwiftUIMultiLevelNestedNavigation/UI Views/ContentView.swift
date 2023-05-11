@@ -13,12 +13,12 @@ struct MenuButton: View {
     var body: some View {
         Text(label)
             .foregroundColor(.white)
-            .font(.system(size: 20))
+            .font(.system(size: 24))
             .padding(10)
             .frame(minWidth: 0, maxWidth: .infinity)
             .background(
                 RoundedRectangle(cornerRadius: 5, style: .circular)
-                    .fill(Color("blue2"))
+                    .fill(.mint)
             )
     }
 }
@@ -53,29 +53,13 @@ struct ContentView: View {
                 Button(action: {
                     path.append(FoodItemListView.tag)
                 }) {
-                    Text("Yummy Foods 🍕")
-                        .foregroundColor(.white)
-                        .font(.system(size: 24))
-                        .padding(10)
-                        .frame(minWidth: 0, maxWidth: .infinity)
-                        .background(
-                            RoundedRectangle(cornerRadius: 5, style: .circular)
-                                .fill(.mint)
-                        )
+                    MenuButton(label: "Yummy Foods 🍕")
                 }
                 
                 Button(action: {
                     path.append(ClothItemListView.tag)
                 }) {
-                    Text("Fashionable Cloths 🛍️")
-                        .foregroundColor(.white)
-                        .font(.system(size: 24))
-                        .padding(10)
-                        .frame(minWidth: 0, maxWidth: .infinity)
-                        .background(
-                            RoundedRectangle(cornerRadius: 5, style: .circular)
-                                .fill(.mint)
-                        )
+                    MenuButton(label: "Fashionable Cloths 🛍️")
                 }
             }.navigationTitle("SwiftUI Navigations")
             .padding(.horizontal, 20)

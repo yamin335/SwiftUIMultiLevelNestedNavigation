@@ -17,16 +17,7 @@ struct ClothItemListView: View {
                 Button(action: {
                     path.append(item)
                 }) {
-                    Text(item.name)
-                        .font(.system(size: 24, weight: .regular))
-                        .foregroundColor(.blue)
-                        .padding(.horizontal, 15)
-                        .padding(.vertical, 6)
-                        .frame(minWidth: 0, maxWidth: .infinity)
-                        .background(
-                            RoundedRectangle(cornerRadius: 5, style: .circular)
-                                .stroke(.blue, lineWidth: 1)
-                        )
+                    ListItem(label: item.name)
                 }
             }
         }.navigationTitle("Fashionable Cloths 🛍️")

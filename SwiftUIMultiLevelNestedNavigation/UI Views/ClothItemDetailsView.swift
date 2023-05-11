@@ -25,16 +25,7 @@ struct ClothItemDetailsView: View {
                     Button(action: {
                         path.append(item)
                     }) {
-                        Text(item.name)
-                            .font(.system(size: 24, weight: .regular))
-                            .foregroundColor(.blue)
-                            .padding(.horizontal, 15)
-                            .padding(.vertical, 6)
-                            .frame(width: 100, height: 100)
-                            .background(
-                                RoundedRectangle(cornerRadius: 5, style: .circular)
-                                    .stroke(.blue, lineWidth: 1)
-                            )
+                        RelatedListItem(label: item.name)
                     }
                 }
             }
@@ -44,16 +35,7 @@ struct ClothItemDetailsView: View {
                     path.removeLast()
                 }
             }) {
-                Text("Back to the list")
-                    .font(.system(size: 14, weight: .regular))
-                    .foregroundColor(.blue)
-                    .padding(.horizontal, 15)
-                    .padding(.vertical, 6)
-                    .frame(minWidth: 0, maxWidth: .infinity)
-                    .background(
-                        RoundedRectangle(cornerRadius: 5, style: .circular)
-                            .stroke(.blue, lineWidth: 1)
-                    )
+                BackButton(label: "Back to the list")
             }.padding(40)
             
             Spacer()
