@@ -56,9 +56,7 @@ struct ContentView: View {
                     MenuButton(label: "Yummy Foods 🍕")
                 }
                 
-                Button(action: {
-                    path.append(ClothItemListView.tag)
-                }) {
+                NavigationLink(value: ClothItemListView.tag) {
                     MenuButton(label: "Fashionable Cloths 🛍️")
                 }
             }.navigationTitle("SwiftUI Navigations")

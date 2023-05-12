@@ -22,9 +22,7 @@ struct ClothItemDetailsView: View {
 
             HStack {
                 ForEach(Array(listOfCloths.enumerated()), id: \.offset) { index, item in
-                    Button(action: {
-                        path.append(item)
-                    }) {
+                    NavigationLink(value: item) {
                         RelatedListItem(label: item.name)
                     }
                 }
